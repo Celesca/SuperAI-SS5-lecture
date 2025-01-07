@@ -17,7 +17,7 @@ Sorry for my bad English. I just want to share knowledges to people around the w
 
 | Course | Difficulty | Document |
 | --- | --- | --- |
-| MAT1001 - Mathematics for AI | Fundamental | 📓 [Lecture](https://github.com/Celesca/PMU-B-PersonalAI/blob/main/Course1_xPore/xPore_Lecture.md) |
+| MAT1001 - Mathematics for AI | Fundamental | 📓 [Lecture](https://github.com/Celesca/SuperAI-SS5-lecture/blob/main/MAT1001%20-%20Mathematics%20for%20AI%20%5BFundamental%5D/Lecture.md) |
 
 ## Summary for each courses :
 

@@ -113,6 +113,9 @@ Power Method ->
 เอาไปคูณกับ Matrix A แล้วหารด้วย Norm เราจะได้ เรายิ่งคูณ Matrix A มากเข้า แล้วเมทริกซ์ v ค่ามันจะค่อยๆลู่เข้า
 v น้อยลงเรื่อยๆ สรุปแล้ว v ที่ลู่เข้ามันจะกลายเป็น Eigenvectors มันมีวิธีการที่คูณเข้าไปเรื่อยๆแล้ว Column vector v มันลู่เข้าเฉย
 
+แล้วถ้า Vector - 1 ถ้า Eigenvectors มันคืออันเดียวกันเลย - 1 
+ในตัว Power Method สามารถคำนวณ Eigenvectors เราสามารถคำนวณค่า norm ก่อนสุดท้าย เราเอา Eigenvectors แล้วก็จับมันมาคูณทแยง แล้วลบกับ Matrix A ตัวเดิม
+จากนั้นคำนวณ Power method ก็จะออกมาเป็น Eigen-pair นั้นก็เข้าใจเรื่อย ๆ แล้วก็คำนวณ Eigenvectors คำนวณออกมาเรื่อย ๆ
 
-
+![image](https://github.com/user-attachments/assets/e1d7c792-4b43-4f9f-9167-f1f77fb79da9)
 

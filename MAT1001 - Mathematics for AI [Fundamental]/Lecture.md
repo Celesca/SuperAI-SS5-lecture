@@ -119,3 +119,7 @@ v น้อยลงเรื่อยๆ สรุปแล้ว v ที่�
 
 ![image](https://github.com/user-attachments/assets/e1d7c792-4b43-4f9f-9167-f1f77fb79da9)
 
+## Singular Value Decomposition (SVD)
+
+
+

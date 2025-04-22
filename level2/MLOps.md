@@ -50,8 +50,40 @@ PostgresQL, Mongodb, Elasticsearch ก็ลองรับ
 
 MCP Hosts จะลิ้งค์ไปหา Platform มันก็จะเอา MCP Server จากเจ้าอื่น ที่สามารถเสียบได้เลย ไม่ต้องผ่าน Public Key ก็จะสะดวกแล้วนำไปใช้ต่อได้วง่ายกว่า
 
+---
 
+หลักการในการ Ai/ML API ก็จะทำ Cache Model / Cache Reference
+Point cloud Files แต่พวก Generative มันไม่ค่อย Cache กันเพราะว่ามีเรื่องของ Temperature
 
+เราสามารถเขียน Piepline File ได้จาก Python เลย
 
+![image](https://github.com/user-attachments/assets/6228d137-e3ce-45b1-87f2-ee58ccd6a4ac)
 
+มันสามารถเรียก Toggle ได้หลายไฟล์
 
+![image](https://github.com/user-attachments/assets/05f1951a-b131-405e-ad49-f432908ba28d)
+
+เราก็จะแปลงเป็น pkg แปลงเป็นกราฟ
+
+## Careers
+
+![image](https://github.com/user-attachments/assets/09548b02-6901-4d27-b4ad-e5fd69a8e5a9)
+
+![image](https://github.com/user-attachments/assets/f1d8ad95-d997-4caf-bd29-20d2dc75a4a2)
+
+Data Engineer -> มี Data Source ขนาดใหญ่ เอามาคลีน Validate, ETL, ELT เก็บ Data ให้พร้อมใช้งาน
+
+Data Scientist -> เอามาวิเคราะห์สร้างโมเดล
+
+ML Engineer -> เอาโค้ด Data Scientist มา Optimize มาทำ Docker Deploy ก็ว่ากันไป
+
+![image](https://github.com/user-attachments/assets/0ace74b4-6bf4-4546-b0e2-8505441dbb43)
+
+เจอมาบางที่ใช้ Data Analyst, Full Loop Requirements ก็ลองอ่าน JD ให้ละเอียด 
+
+![image](https://github.com/user-attachments/assets/d68c68d7-9c92-4281-a172-819161a01fb9)
+
+AI Engineer -> ก็ทำ RAG มากกว่าในตลาด
+
+หลักๆ ควรได้พวก Linux Cloud Docker Kubernetes / มันทับซ้อนกับ DevOps ทำ CI/CD Pipeline มันแล้วแต่ที่เลยว่าเขา Requires แค่ไหน
+ส่วนใหญ่จะทำงานกับ Startups เป็นส่วนใหญ่ ก็กระจายหลายด้าน

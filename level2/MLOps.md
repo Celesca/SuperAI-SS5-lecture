@@ -91,8 +91,12 @@ AI Engineer -> ก็ทำ RAG มากกว่าในตลาด
 สนใจ Deployment / Cloud / Ops เขาต้องเข้าใจ ML Model มากขึ้น เพราะว่า DevOps มา Deploy เอง
 ปกติเขาจะต้องเก็บโค้ด เก็บโมเดล Database ประมาณนั้น แต่พอเป็น ML มันก็จะมี Model Versioning / Data Versioning โมเดลใหญ่ๆไว้ตรงไหน Load เอาไว้ตรงไหน
 
+* จำเป็นต้องรู้ด้าน Security หรือไม่
+
 ไม่ได้ดูด้าน Expert มันควร Security In mind คือมันไม่ต้องรู้เท่ากับ Expert
 
 ส่วนใหญ่ที่เจอมาจะเป็นเรื่องของ Push secret keys ขึ้น git หรือใส่ env หรือรหัส Database ก็ต้องดูไม่ให้มัน Leaked
 อาจจะโดน Github ไปเทรนด์พวกโมเดล ระวัง Memory Leaked เช่น โมเดลเรารับ Data มา แล้ว Data Image ใช้เมมเยอะ พอมันบวม มันก็จะ
 Overmem แล้วก็พังไปได้
+
+สิ่งที่น่าสนใจคือ AI Sec Ops

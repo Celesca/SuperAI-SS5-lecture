@@ -40,6 +40,18 @@ Data เยอะอาจจะใช้ KNN น่าจะช้า แล้
 
 เขาก็จะให้ Similarity Search
 
+PostgresQL, Mongodb, Elasticsearch ก็ลองรับ
+
+* Agentic AI (Multi Agents)
+
+การให้ LLM ตัวนึงเป็น Agent ในการทำงาน ทำเว็บ Agent ให้มันลองมาคุยกันเองว่า เราจะสั่งงานยังไง
+
+* MCP
+
+MCP Hosts จะลิ้งค์ไปหา Platform มันก็จะเอา MCP Server จากเจ้าอื่น ที่สามารถเสียบได้เลย ไม่ต้องผ่าน Public Key ก็จะสะดวกแล้วนำไปใช้ต่อได้วง่ายกว่า
+
+
+
 
 
 

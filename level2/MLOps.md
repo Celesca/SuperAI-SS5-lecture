@@ -28,4 +28,18 @@ LLM หลักๆ สกิลที่เราควรมีคือ Promp
 มันจะทำการ Encode Documents ให้กลายเป็น Vector (ทำ Embedding) แล้วไปเก็บใน Vector Database
 เช่น บทที่ 2 กล่าวว่าอะไร มันก็จะไปเสิร์จใน Vector Database แล้วก็จะได้
 
+![image](https://github.com/user-attachments/assets/f4aa135f-b2eb-49e9-89b5-4a7fdbfb2473)
+
+Data เยอะอาจจะใช้ KNN น่าจะช้า แล้วเราจะพร้อมพ์โมเดลยังไงให้มันเจอ Data document ที่มันมีได้ด้วย
+
+* Vector Database
+
+เพราะว่า RAG นิยมมากเลยในช่วงนี้ ก็จะเป็น Vector Database ซึ่งมันมาจากการ Raw Data ไปผ่านตัว Embedding Models
+
+![image](https://github.com/user-attachments/assets/512c06fe-64d4-4aac-9b4d-c464cda9f191)
+
+เขาก็จะให้ Similarity Search
+
+
+
 

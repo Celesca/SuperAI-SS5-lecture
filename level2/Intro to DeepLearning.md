@@ -237,3 +237,8 @@ z~N(u, sigma) ให้กลายเป็น z = u + epsilon (sigma)
 
 Normal distribution = normal + normal เหมือนเดิม
 
+z คือตัว latent representation เช่น Stable diffusion everything is vector ทั้งหมดเลย เพราะเราเขียนบนฟอร์มของเวกเตอร์ ข้อดีของการทำ Tensor คือ Sparse Relations
+
+แต่ก็แค่ลากทุกอย่างเป็น Vector ฉะนั้นทุกการ Flattening มันคือมิติของ Vector ฉะนั้น Stable Diffusion จริงๆจะปรับ Fully Connected ได้ แต่ว่ามันไม่ดี เพราะ ตัวที่ปรับเยอะเกินไป
+
+ค่า Backpropagation ที่เรามี ของเราน้อยก็ยิ่งดี แต่ในอนาคต ทุกอย่างเป็น Vector ไม่ใช่ Spatial ทุกอย่างมันก็เป็นรูปแบบของกราฟอยู่ดี

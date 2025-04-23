@@ -166,3 +166,22 @@ Super Resolution (SRGAN) - กู้คืนภาพ
 
 Training อยู่ที่การขยายรูปได้ 4 เท่า
 
+## VAE (Variational Autoencoder)
+
+* Autoencoder
+
+![image](https://github.com/user-attachments/assets/23b8b17f-d974-4c3c-ad69-1aa5c4786d34)
+
+![image](https://github.com/user-attachments/assets/b1c24105-3270-459a-8d60-164fafe28d97)
+
+พบว่าแต่ละ Row มันจะไม่ซ้ำกันเลย 8 อัน จริงๆมันคือ Binary Code แต่มันไม่เรียง ซึ่งมันเป็น Blackbox จาก 8 เหลือ 3 มิติ
+
+Limitation of Autoencoder เป็น Unsupervised สมมติว่านี่คือ Latent space ที่เป็นมิติตรงกลาง พอเรามาพล็อตเป็นจุด
+
+อาจจะเป็น 100 มิติ เราก็จะใช้ 1024 มิติ แต่ว่ารอบนี้มันวาดเป็น 1024 ไม่ได้ พอเราไปพล็อตดูมิตินี้ควรจะเป็นยังไง มันก็จะกองๆ อยู่ตรงนี้
+ซึ่งมันทำได้ ปัญหาคือ Space ที่ดีพอ เส้นนี้มันจะต้อง Represent การ Transform ถ้าผมเดินตามเส้นนี้ มันควรจะค่อยๆ เปลี่ยนจาก 5 เป็น 0
+
+เพราะเราอยากให้ทุกอนูของ Latent space มีความหมาย ถ้าผมจิ้มไปตรงนี้มันควรมีความหมาย อาจออกมาเป็นเลข 8 ก็ได้
+
+
+

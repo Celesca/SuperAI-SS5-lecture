@@ -75,6 +75,37 @@ x ทุกตัว มันเปลี่ยนไปเรื่อย ๆ 
 
 อย่าไปหวังเลยว่ามัน Global local เพราะว่าเราไม่มี data ในทุก ๆ ปัญหา
 
+![image](https://github.com/user-attachments/assets/ad7d76b9-aa84-4025-90ab-87d556230d16)
+
+Aggregration - บวก หรือเทค action นึงมาทำ
+
+![image](https://github.com/user-attachments/assets/7a89057e-b2cd-4170-8a65-e6a3d5adfb80)
+
+1 Epoch มันจะยัด Data เข้าไปทีเดียว แต่ว่า
+
+![image](https://github.com/user-attachments/assets/10ae11b9-6dd4-4b50-9ae2-95db94d503c8)
+
+มันจะ Random จิ้มค่าลงเหว Global minimum พอดี
+
+![image](https://github.com/user-attachments/assets/ff94bcc7-20ee-4dc3-ba54-c12e922da4dd)
+
+เราจำเป็นต้องใช้ Perceptron (MLP) มากกว่า 1 ชั้น
+
+![image](https://github.com/user-attachments/assets/4563730c-1859-4950-aaf8-0d6f1fc0b4e5)
+
+ถ้าเรามองมันคือ Feature Space นึงไปอันนึง
+
+โดยปัญหาตัวนี้มันลากเส้นเดียวไม่ได้เลย 
+
+![image](https://github.com/user-attachments/assets/af78e133-7499-4ac5-b080-1da31653d397)
+
+มันจะ Simplify ให้เข้า Feature Space ใหม่เรื่อย ๆ และเป็น HyperSpace โค้งๆได้
+
+![image](https://github.com/user-attachments/assets/78d4a3a1-15eb-473d-95ea-fafad9e7fabf)
+
+แต่ปัญหา Weights ไม่เปลี่ยน เหตุผลเพราะมันมีค่าน้อยเกินไปก็จะเกิด Vanishing Gradient ปกติซ้อนกันเป็น 100 เพราะ Double point มันหายไป
+
+* มันไม่ใช่การพับแต่มันเป็นเปลี่ยน Feature Space มันสร้างมิติใหม่เรื่อยๆ จนกว่าจะได้ Linear อยู่คนละจักรวาล
 
 
 

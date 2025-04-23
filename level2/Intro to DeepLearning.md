@@ -226,14 +226,14 @@ z~N(u, sigma) ให้กลายเป็น z = u + epsilon (sigma)
 
 ถ้าหาก epsilon เป็น 2 ก็จะสุ่มมาทางขวา มันทำให้เราได้ z ทุกตัวที่อยู่บน Normal Curve โดยการเปลี่ยนสมการ เป็น
 
-Reparameterization trick
+## Reparameterization trick
 
 ![image](https://github.com/user-attachments/assets/bb173fb2-1a94-4daa-a189-0cd5ca180579)
 
 แล้วพอเราไป Build graph เป็น Back propagation z มันเกิดจาก u + epsilon (sigma) แต่มันเหลือแค่ Epsilon เป็น Stochastics แล้วส่วนอื่นเป็น Deterministics
-มันสามารถแตกไปที่ มันไม่สามารถ Backpropagation Epsilon ได้ มันเป็นหลักการ Generative Neural Network เช่น Stable Diffusion
+มันสามารถแตกไปที่ มันไม่สามารถ Backpropagation Epsilon ได้ มันเป็นหลักการ Generative Neural Network เช่น Stable Diffusion ถ้าเข้าใจทั้งหมด
 
-ยังคงมี Gradient ตรงกับไปปรับ Weight ได้ มันไม่สนใจตัว Epsilon
+ยังคงมี Gradient ตรงกับไปปรับ Weight ได้ มันไม่สนใจตัว Epsilon คือมันสุ่มมาจาก Normal เหมือนเดิม ขอแค่กราฟไม่ขาด แต่มีอันที่ขาด เพราะมันเป็น Normal Distribution ของมันนึง
 
-
+Normal distribution = normal + normal เหมือนเดิม
 

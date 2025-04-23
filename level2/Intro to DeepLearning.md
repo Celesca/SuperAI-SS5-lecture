@@ -142,4 +142,27 @@ Convolutional vs Fully Connected
 1. มีเส้นให้ปรับน้อยลง (คล้ายกับการขับเครื่องบินมีอะไรให้ปรับเยอะ มันก็ยิ่งยาก)
 2. เส้นไหนอยากแชร์ Weights ก็ให้ชี้ไป Memory เดียวกัน มันเป็น Neural Network ที่ง่ายลงกว่าเดิม
 
+![image](https://github.com/user-attachments/assets/0ee26885-ca18-4dab-9e02-73f505671d8d)
+
+Autoencoder เป็น UNsupervised Input เป็นรูป Output เป็นรูประบายสี เช่นเป็น Segmentation ระบายสี
+
+ResNet Inspired ระบบประสาท มัน Filter ข้อมูลที่หาย มันก็จะยิง ข้อมูลที่หายกลับมาด้วย แล้วก็เอา Segment รวม Script Connection
+
+![image](https://github.com/user-attachments/assets/5dedd12e-cae8-4162-8c6a-0cc9e556b116)
+
+U-Net มันเป็นส่วนสำคัญของพวกรูป เช่น Stable Diffusion
+
+ResNet ที่มี Script Concatenation ถ้ามันไม่มี ข้อมูลมันก็จะหายไป เราก็เลย
+
+![image](https://github.com/user-attachments/assets/ce64dc91-614b-409d-8671-16b31c03cb04)
+
+ตัวนึงเอาไว้สร้างของเลียนแบบ อีกตัวนึงเอาไว้จับผิด จริงๆ มันสร้างได้จาก Autoencoder แล้ว
+
+Super Resolution (SRGAN) - กู้คืนภาพ
+
+![image](https://github.com/user-attachments/assets/4bb40624-fefe-4dda-af03-606aecf03e92)
+
+เรากู้คืนข้อมูลไม่ได้จริง ซึ่งของในรูปเรามันมีความเหมือนกันอยู่แล้ว Integrate แล้วกำหนดให้รูปที่เกิดมาใหม่
+
+Training อยู่ที่การขยายรูปได้ 4 เท่า
 

@@ -107,7 +107,17 @@ Aggregration - บวก หรือเทค action นึงมาทำ
 
 * มันไม่ใช่การพับแต่มันเป็นเปลี่ยน Feature Space มันสร้างมิติใหม่เรื่อยๆ จนกว่าจะได้ Linear อยู่คนละจักรวาล
 
+## Convolutional Neural Network
 
+* CNN จริงๆมันเป็น Operation นึงใน Maths แต่มันใช้ Cost
+Signal มันคือการกลับข้าง จับ up down แล้ว implement
 
+ถ้าเรียน AI เขาไม่ค่อยสน Pure math แต่มันเป็น Universal Language
+
+![image](https://github.com/user-attachments/assets/f162a09b-0b16-42d2-8962-a303174b1584)
+
+ตระกูล Pooling ทำให้ Deeper ใหญ่ขึ้น แต่ว่าไม่มี Parameters
+
+Diff Max pooling อันไหนไม่ได้เอา เส้นที่ไม่เอาก็เป็น 0 แต่ถ้า Average pooling ก็จับเท่ากัน ถึงแม้จะ Diff ตรงๆ ไม่ได้ แต่ก็หา Backpropagation
 
 

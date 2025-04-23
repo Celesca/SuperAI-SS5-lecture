@@ -64,6 +64,18 @@ Normal vector represents hyperplane ฉะนั้น เราจะ Random No
 
 โดยปกติมันมาจากสมการแต่ถ้าเรามองในมุมของ Vector ก็จะทำ Classification ได้ดังนี้
 
+* How to find the optimal weights
+
+![image](https://github.com/user-attachments/assets/1b38b7ed-ba50-455b-93f8-008104fa40c4
+
+จุดต่ำสุดสมบูรณ์ของกราฟ Loss function โดยกราฟนี้ หาจุดต่ำสุดโคตรง่าย เพราะเราจับ Slope = 0 เราลากผ่านจุดจะได้เส้นแนวนอนเสมอ
+
+แต่ในความเป็นจริง Neural Networks สมการที่แท้จริงของ Loss function คือมันใช้ Distance แต่ว่าถ้าเราอยากใช้ MSE
+x ทุกตัว มันเปลี่ยนไปเรื่อย ๆ มันเหมือนเป็นหมอก Continuous เพราะนั้นในความเป็นจริง มันยุ่งกว่าเส้นประอีก ฉะนั้น
+
+อย่าไปหวังเลยว่ามัน Global local เพราะว่าเราไม่มี data ในทุก ๆ ปัญหา
+
+
 
 
 

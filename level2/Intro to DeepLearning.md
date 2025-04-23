@@ -120,4 +120,26 @@ Signal มันคือการกลับข้าง จับ up down แ
 
 Diff Max pooling อันไหนไม่ได้เอา เส้นที่ไม่เอาก็เป็น 0 แต่ถ้า Average pooling ก็จับเท่ากัน ถึงแม้จะ Diff ตรงๆ ไม่ได้ แต่ก็หา Backpropagation
 
+Cost Correlation - เขาไม่ค่อยเรียกกัน ดังนั้นมันก็เลยชื่อ Convolutional Neural Network
+
+![image](https://github.com/user-attachments/assets/37214459-f758-49b8-b2fa-b8f7da2f93ba)
+
+มัน Pure Convolution Network สนใจเฉพาะ Convolution เขาเชื่อในความสวยงามของ CNN ก็คือไม่มี Flatten
+
+![image](https://github.com/user-attachments/assets/f167de59-0aaf-44d2-a4ba-8c375a8a7188)
+
+![image](https://github.com/user-attachments/assets/88e987be-54d1-4384-ad28-100967a9be14)
+
+Convolutional vs Fully Connected
+
+![image](https://github.com/user-attachments/assets/dde7b4c2-cb32-45d2-91da-d0d508df312e)
+
+ถ้าเราเทรนด์มิติพอ ก็คือมันไม่ได้ลากเส้น 15 เส้น แต่มันทำ 9 เส้น โดยที่เราใช้ Kernel = 3 
+หมายถึง Output 1 ตัวรับ 3 ตัวที่ใกล้ๆกัน แล้วก็ให้ตัวนึงเป็น Filter อันนึง มันจะแชร์ Weights กัน
+
+ทำให้ CNN มันปรับง่ายขึ้นเพราะ
+
+1. มีเส้นให้ปรับน้อยลง (คล้ายกับการขับเครื่องบินมีอะไรให้ปรับเยอะ มันก็ยิ่งยาก)
+2. เส้นไหนอยากแชร์ Weights ก็ให้ชี้ไป Memory เดียวกัน มันเป็น Neural Network ที่ง่ายลงกว่าเดิม
+
 

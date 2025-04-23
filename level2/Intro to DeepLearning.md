@@ -441,4 +441,36 @@ Random noise จาก Distribution ก็ Generate ได้เลย อยา
 
 Markov -> หมายถึงวันนี้มันเกิดจากเมื่อวาน โดยที่ไม่ต้องต่อไปวันอื่นอีกแล้ว เอาทั้งหมดไปพิสูจน์สูตรนี้ เนื่องจาก Stochastics ก็คือคำตอบก็จะเป็นตัวนี้
 
-ถ้าเรามีรูปสองรูป และไม่มีต้นฉบับเลย เราจะไม่รู้ว่าเหนือน้ำอยู่ตรงไหน
+ถ้าเรามีรูปสองรูป และไม่มีต้นฉบับเลย เราจะไม่รู้ว่าเหนือน้ำอยู่ตรงไหน มันก็เลยจะได้เป็นสูตร Markov ให้เขียนย้อนกลับมาเป็น Diffusion แล้วเราก็จะได้มิวแล้วครับ
+
+![image](https://github.com/user-attachments/assets/c553da3c-12cf-4ab2-bf81-2dd42eaeeb40)
+
+Train ให้เหลือ Actual ไล่มาเรื่อยๆ 5 หน้ากระดาษ คอนเซปง่ายๆ คือ ถ้า Actual Predict อันนี้คงที่
+มันจะมีแค่สองตัวนี้ที่ Vary ฉะนั้นไอสองตัวนั้น Actual Noise, Predict Noise แล้วก็ต้องสร้างขึ้นมา Predict ขึ้นมา ฉะนั้นเราก็เลย Drop predict noise
+
+![image](https://github.com/user-attachments/assets/3303d2b4-3e7b-42d9-882b-4b508aec6270)
+
+ไม่ได้ทำ Pixel Space แต่เปลี่ยน VAE ให้ Pixel Space ให้กลายเป็น Latent Spaceแล้วก็ DDPM ได้ z มาตัวนึง พอได้เป็น Prob. แล้วก็เอา LLM มาตัวนึง เราใช้ Text encoder CLIP 
+
+เปลี่ยน Text เป็น Vector ประกอบกับ U-Net แล้วมี Attention mechanism แล้วก็ผ่าน VAE แล้วก็ได้ Stable Diffusion ที่รู้ภาษาคน เพราะเราอยากให้มันรู้อะไร
+
+Cross Attention
+
+![image](https://github.com/user-attachments/assets/a5a42d22-2637-40f8-b216-b86430028aab)
+
+## Optimizers
+
+เราอยากทำให้มัน Localize มากขึ้น คือเอาค่าเดิมที่วิ่งมา เป็น Affect เหมือนเพิ่มความเร็วให้ฟุตบอล แล้วก็มี v ตัวเก่า บวกอย่างเดียว
+
+RMSprop เปิด Coursera แล้วก็บอกว่าเราจะใช้หลักการของคนนี้ Beta และคิดอะไรไม่ออก ก็เอา Adam เขาเอาทุกอย่างมารวม
+
+* คำถาม alpha p คืออะไร
+
+Variance Beta -> เราจะรู้ได้ไงว่ารูปเป็น Pure Noise แปลว่า Variance สมบูรณ์เต็มที่ เราก็เลยกำหนด Beta = 1- alpha ถ้าเราอยากรู้ (Beta คือ Variance ของ Noise)
+
+เพื่อการันตีว่ามันเป็น Pure Noise ได้
+
+เวลาเราสร้างตาราง สเต็ป P = 100 แต่ตอนใช้ เราอาจจะใช้ Steps น้อยมากกว่านั้น Train p steps แต่ Predicted k steps ไม่ว่าสเต็ปไหนก็ต้อง Predict White Noise
+
+
+

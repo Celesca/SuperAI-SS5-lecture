@@ -242,3 +242,166 @@ z คือตัว latent representation เช่น Stable diffusion everyth
 แต่ก็แค่ลากทุกอย่างเป็น Vector ฉะนั้นทุกการ Flattening มันคือมิติของ Vector ฉะนั้น Stable Diffusion จริงๆจะปรับ Fully Connected ได้ แต่ว่ามันไม่ดี เพราะ ตัวที่ปรับเยอะเกินไป
 
 ค่า Backpropagation ที่เรามี ของเราน้อยก็ยิ่งดี แต่ในอนาคต ทุกอย่างเป็น Vector ไม่ใช่ Spatial ทุกอย่างมันก็เป็นรูปแบบของกราฟอยู่ดี
+
+## Kullback-Leibler (KL) Divergence
+
+![image](https://github.com/user-attachments/assets/0d1f65c2-3f02-490f-95d7-a0194c766630)
+
+การที่จะทำตัว Generative เส้นโค้งค่านึง
+
+Information Theory -> ในเรื่องของ Entropy ของศาสตร์วิศวะไฟฟ้า ของเสาอากาศ มันก็จะติดเรื่องของ Log
+เราต้องการหา Distribution ที่ต่างกันของ P(x) และ Q(x)
+
+ซึ่งปกติมันคำนวณอยาก เราจะต้องเทค log e เข้าไป ชีวิตจะง่ายเพราะเทค log ก็จะสนแค่ด้านบน
+
+แต่เนื่องจากมันเป็น Stochastics value - มีค่าเยอะไปหมดเลย เราเลยทำ Expectation operator (ค่าคาดหมาย)
+
+Expectation = sigma x * p(x) หรือ Integrate x f(x) มันคือ Aggregation Method ตัวนึงที่เปลี่ยนให้กลายเป็น Scaler
+
+มันก็คือ Prob คูณด้วยตัวที่จะหาโดยใช้ x ทุกตัว ที่มาของสูตร ถ้าลบแล้วมันเหลืออันเดียวก็ใช้ Extension ถ้าทำวิจัยเกี่ยวกับมัน จริงๆเรา import transformer ก็จบ
+
+## Transformers
+
+เนื่องจาก Stable Diffusion ต้องใช้ Transformers
+
+Attention Mechanism - Query, key, value ให้นึกถึง Database
+
+Key คือ index primary key เราจะต้อง Access มันคือตัวเลขของ Array และ value ต่อไป
+
+เวลาเราค้นหา เราจะมี Query และอยู่บน Space เดียวกับ key แต่ไม่ต้องอยู่บน space ของ Value ก็ได้
+
+จริงๆ เราวิ่งไปหา Indexing มันทำให้ Access ได้เร็ว มันรู้ว่าจะวิ่งไปตรงไหน แล้วมันก็จะ Return value ออกไป
+
+สมมติเราเอา Indexing ออกหมดเลย เรียงกันหมด คุณจะต้องเคาะประตูทีละห้อง ซึ่งมันโคตรช้า แต่ถ้าเราติดชื่อเป็นเบอร์หมายเลข ก็ยากอีก เพราะว่ามันต้องรู้ว่าใครอยู่ ถ้าหากตารางหาย เราก็ต้องมานั่งเคาะเหมือนเดิม
+
+จะเป็นไปได้ไหมที่ Data ตัวมันเองบอกชื่อตัวมันเอง เราจะเรียกมันว่า Hash table (ไม่มีใครสอน Transformers รวมกับ Hash table) เช่น
+
+ถ้าสมมติเรา Hash Table สมชายแล้วติดหน้าห้องสมชาย หมายความว่าเราก็ถอดรหัสด้วย Hashing functions โดยที่ไม่ต้องเคาะห้องเลย ผมไม่จำเป็นต้องมีตาราง Maths เลย เพราะผมรู้ว่า ใช้ชื่อผม
+แล้วเอา Hash functions มาตัวนึง ซึ่งมีปัญหามากมายแต่ ถ้าเราอยากได้ Hash functions ดีๆสักตัวนึง ถ้าคิดดีก็ดี แต่คิดไม่ดีก็ชนกัน
+
+ยัดคนลงไปในห้องเดียวกัน มันก็ไม่เวิร์ค แล้วเราจะมี neural network ไว้ทำไม ฉะนั้น เราก็เลยใช้ Neural network คิด hash functions Fully connected ตัวนึงมาใช้ QKV ให้เลย
+
+เจ๋งอะดิ
+
+![image](https://github.com/user-attachments/assets/d6e8aa59-981d-4a9d-8d16-7e19b4f4e0e4)
+
+คำว่า มันคนละความหมาย เราไม่ควร return เป็น Fix vector
+
+สูตร attention คุยกันรู้เรื่อง Distance เราก็ต้องลบและถอดรากที่สอง แล้วถ้าเราต้องใช้ Cosine มันจะ Simplify ได้ไหม ก็คือ cos = a dot b ซึ่งมันก็คือ Cosine Similarity
+
+Similarity function จะบอกความคล้ายเช่น
+
+![image](https://github.com/user-attachments/assets/0d12cf19-78db-412d-b99f-2112c1b426e2)
+
+แทนที่เราจะ return คำนึงหมดแบบนี้
+
+![image](https://github.com/user-attachments/assets/50aef071-520f-4850-8eb5-44ae5497ac5c)
+
+แต่เราจะให้ความเหมือนมาคูณ แล้วเอามาบวกกัน ก็จะได้ Vector ขนาดเท่าเดิม เป็น Extension
+
+![image](https://github.com/user-attachments/assets/c2000862-c2c5-4f65-a4ad-385a8aab8b29)
+
+Query, Key, Value เพื่อที่จะ Return Query 1 ออก 1 ก็จริง แต่ไอ 1 Vector นั้นมันเป็นองค์ประกอบของ Token list ทั้งหมดที่เรามีเลย โดยที่บอก 
+
+ใน Paper ใช้ Scale Dot-Product
+
+![image](https://github.com/user-attachments/assets/3345be35-ef86-4026-8062-6d4bd9807053)
+
+ใส่ Softmax ให้เขาเปรียบเทียบกันได้ แล้วคูณออกมาเป็นแบบนี้
+
+![image](https://github.com/user-attachments/assets/a288ab0a-e39d-453d-bdc4-1e7da63d3811)
+
+สุดท้ายตำแหน่งของคำ
+
+## Positional Encoding - ตำแหน่งข้อมูลลงไปด้วย
+
+![image](https://github.com/user-attachments/assets/057fc53d-127c-4623-9856-2b30f002c15f)
+
+เขาจะใช้ Sine กับ Cosine ในการเข้ารหัส เอาไปประกบเข้าด้วย
+
+ก็คือเข้า x แล้วบวก PE แล้วไปทำ Fully connected Linear
+
+![image](https://github.com/user-attachments/assets/986c5430-2b8c-4d78-8232-f92f056866ee)
+
+Attention vector ตัวเดียวไม่พอ
+
+เราเลยทำ Multi-head attention
+
+![image](https://github.com/user-attachments/assets/5a86f051-8308-4598-a22e-2189c6e8deb6)
+
+รวมจนพอใจ แล้วเข้า Concatenate เราก็จะไม่เหมือนกันิเลย
+
+ปกติเรา Batch Normalization ได้ค่าเก็บไว้ เราก็ Normalize แนวนี้เลย
+
+![image](https://github.com/user-attachments/assets/7d1bc34d-d147-4f05-9685-c6b4a0edcd31)
+
+มาตัวเดียว Normalize ตัวเดียว
+
+ก็มีคนไปใช้ใน Vision Transformers
+
+## Vision Transformers
+
+![image](https://github.com/user-attachments/assets/248eadf7-f99c-4bac-a385-5f0a67104d7d)
+
+ทำยังไงให้กลายเป็นประโยค ถ้าเราเอา Pixel มันไม่มีความหมาย
+
+ตัดแล้วเรียงกันยาวเป็น 1 Meaning 1 patch แล้วก็ทำทุกอย่างเหมือนเดิม
+
+![image](https://github.com/user-attachments/assets/4334b6b7-42af-412f-bbc6-e2212f02631a)
+
+ทำ positioning และ multi-head ธรรมดา
+
+ViT เป็น Backbone ถ้ามันมา JFT Efficient Net อาจจะดีกว่าก็ได้
+
+![image](https://github.com/user-attachments/assets/b2cd2cc4-7ded-47df-bcf8-d1abea9d01ee)
+
+ถามว่าดี แต่ว่าเราต้องการ Data เยอะมากๆในการเทรนด์ ViT ถ้าหากข้อมูลไม่ได้เยอะ ก็จะใช้ CNN ไปก่อน
+
+## Vision-language models
+
+จุดพลิกผันมาอยู่ที่นี่ มันพบว่ามี Embedding layers ของ Text, Image มันคุยกันได้ไหม
+
+![image](https://github.com/user-attachments/assets/b722c387-4766-4a4e-bfd0-e8e74137d984)
+
+เขาเทรนด์คู่ Image-text คำอธิบายภาพ กับภาพ เอามาเทรนด์โดยการเทรนด์
+
+Contrastive Learning -> เป็นวิธีการ Learn ที่ดีที่สุด คือการสนใจแค่ 2 คลาสคือ Positive คำอธิบายถูกคู่ and negative pairs คำอธิบายผิดคู่
+
+เราก็สุ่มหยิบคู่ โดยที่ไม่ต้อง Label คือเป็น Supervised Learning ที่ไม่ต้อง Label ประโยชน์ของมันคือการทำ Zero-shot classification ได้
+
+คือมันไม่เคยรู้จัก class นั้นมาก่อนเลย ไม่เคยรู้เกี่ยวกับคลาสนั้นมาก่อน
+
+One-shot learning คือเรามี 1 ตัวอย่าง เช่น เรามีรูปเดียว Few-shot อาจจะมีรูปเขาสัก 5 รูป
+
+![image](https://github.com/user-attachments/assets/94f30cc9-ed99-4370-be46-a8fa80d6ec7e)
+
+ตระกูล Language model คือทำ Zero-shot ได้หมดเลย ก็คือเราให้ตัวอย่างกับมันแบบนี้ A photo of a {object} เป็นคลาสที่สนใจในงานนั้น รถยนต์หมานก ก็ไปเอาสิ่งนั้นมา
+เอาคำที่เราสนใจแล้วไปเข้า Text Encoder เราก็จะได้แบบนี้มา
+
+สมมติเรามี รูปนึง เราอยากรู้ว่างานที่เราทำ มันมีอะไรบ้าง โดยที่เราไม่เคยเอา Data ไปเทรนด์เลย เราต้องรู้ว่าเรามี Label อะไรบ้าง ยิงเข้า Image Encoder
+ไปหา Similarity แล้วตัวไหนคล้ายสุด มันคือ dog มันก็จบ ทั้งๆที่มันไม่เคย Train มาก่อนด้วย Contrastive Learning ซึ่งมันรู้ว่ามีอะไรบ้าง
+
+ดังนั้น Zero-shot มันค่อนข้างจะมีประโยชน์ สมมติเราเจอ Hackathon แต่ว่ามันมีในธรรมชาติ เราก็ทำได้เลย
+
+## BLIP
+
+![image](https://github.com/user-attachments/assets/f6f6de3c-b2dc-409d-b30c-5c68b2f86be8)
+
+Image Captioning -> Image เป็นรูป output เป็น text
+
+ในขณะที่ CLIP ออกมาเป็นตารางกับความสัมพันธ์ งานหลักของ CLIP คือ Zero-shot ซึ่งมันอาจจะเป็น Fully connected ก็ได้
+
+แต่ถ้า BLIP คือการหา Image Captioning มันอาจจะเป็น สมัยนี้จะเป็น BLIP 2
+
+คือ Q-Former
+
+![image](https://github.com/user-attachments/assets/aa8cbc69-0d77-4e4f-831c-8a0c4df0ab95)
+
+ความสัมพันธ์ Image-text ถ้าจะทำ BLIP ให้ข้ามไป blip 2 แล้วก็มี
+
+![image](https://github.com/user-attachments/assets/dcbfafd6-aae8-4818-b444-25a6ef7414ae)
+
+เอา Language model มาตัวนึงที่เป็น Frozen บางทีการเทรนด์มันเปลืองเงิน ถ้าหากเราเอา layer ที่ไม่เกี่ยวกับ LLM เราทำ Projection ไปคุยแล้ว Response กับมัน
+การทำ Llava มันเก่งด้านการคุยกับรูป "ผู้ชายคนนี้ถืออะไรอยู่" มันจะดีกว่า Image Captioning
+
+![image](https://github.com/user-attachments/assets/1bea82fc-8316-4dd9-a526-088f83dde4b7)

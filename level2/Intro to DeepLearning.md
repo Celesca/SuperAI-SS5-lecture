@@ -405,3 +405,27 @@ Image Captioning -> Image เป็นรูป output เป็น text
 การทำ Llava มันเก่งด้านการคุยกับรูป "ผู้ชายคนนี้ถืออะไรอยู่" มันจะดีกว่า Image Captioning
 
 ![image](https://github.com/user-attachments/assets/1bea82fc-8316-4dd9-a526-088f83dde4b7)
+
+## Diffusion Model
+
+![image](https://github.com/user-attachments/assets/4d3ed5f4-f69a-4501-9cf9-19ddd5bffe17)
+
+=Diffusion หมายถึงการ แพร่
+
+Neural Network ที่เรามีฟังเผินๆ เอารูปนึงใส่ Noise ไปทีละนิด จนกลายเป็น Pure Noise แบบ Normal Distribution แล้ว
+
+เอาให้มันTrain กลับมาให้กลายเป็นรูป
+
+มันคือการ Predicted Gaussian White-noise เฉยๆในทุก Step มันทำให้มันโฟกัส มัน Predict Noise ไม่ใช่เกิดขึ้นระหว่างสเต็ปเดียว
+
+ซึ่งมันไม่ได้สนใจเราแค่ Predict Epsilon คล้ายกับ U-net เราก็ Control noise ด้วย Variance มันก็จะกลายเป็น Alpha, Beta
+
+มันคือ Reparameterization trick คูณด้วย Epsilon มันคือตัวที่อยู่ใน Diffusion เสร็จแล้ว
+
+![image](https://github.com/user-attachments/assets/62e735ba-0b50-4ae6-83ef-473daee0fb9d)
+
+เขาอยากให้มันเทรนด์แบบกระโดดได้ มันก็จะพิสูจน์แบบนี้คือ p-1 ก็แทน p-2 ก็คือมันจะเปลี่ยน t แล้วก็ทำไปเรื่อย ๆ จนถึง x ที่ t ที่เกี่ยวกับสเต็ปสองสเต็ป เขาก็พิสูจน์ด้วยการ probability
+
+mean ตัวนี้เป็น Random มาจาก Normal mean ก็เป็น 0 เหมือนกัน ถ้าเช็ค mean ถ้าเรายิงไปเรื่อยๆ จนถึง t - 1 มันก็จะถึง t-1 t-2 แล้วก็ Variance เป็น 0
+
+

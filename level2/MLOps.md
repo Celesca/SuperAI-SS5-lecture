@@ -173,8 +173,46 @@ Delivers BU
 Streamlit จะเจอช่องโหว่ก็จะโจมตีตลอดเวลา มันจะแก้ไขให้เลย แต่ถ้า Gradio มี Risk Vulnerability สูง
 แต่ถ้า Deploy gradio ก็จะโดนดึงคีย์ไปใช้ HuggingFace จริงๆการ Deploy
 
+## MLSecOps
 
+ดูในมุมของ Machine Learning ไม่ใช่ Security
 
+![image](https://github.com/user-attachments/assets/fe677aff-908f-4b14-842d-cb6d1d37ce60)
+
+ความเก่งฉลาดจะขึ้นตามคนคุยด้วย แล้วโดน Adversarial Interaction เวลา Tweet ให้คนอ่านมันก็จะกลายเป็นคนที่เลวร้ายไปเลย เพราะขาด Content Filtering การคุยกับทุกคนก็จะดี
+แต่ไม่ใช่ว่าการเทรนด์ Model ใช่ว่าจะต้องใช้ทุก Content เพื่อมาเทรนด์ เราควรจะมี Content filtering, behavioral constraints แล้วก็มีเรื่อง
+
+Ethical AI Guardrails -> ทำเป็นเหมือนเขียนโค้ดแล้วบอก Policy ครอบ AI เพื่อ Filter content แบบนี้ ก่อนจะเข้าไปใน LLM AI มันสามารถควบคุม Input และ Filter output ด้วยก็ได้
+
+![image](https://github.com/user-attachments/assets/deaeb272-7708-4730-8c4b-83eb27cc1a2b)
+
+เหมือนพ่อค้าอสังหาริมทรัพย์ เขา Forecasting ราคาบ้าน สมมติมีใครประกาศขายบ้าน เนื่องจากเขารู้ราคาบ้านตลาด เขาก็จะพยายามบิดสู้ในตลาด ในข้อมูลที่เขารู้ จนสามารถ Predict ได้ แต่ว่ามันเกิดเหตุว่า
+โมเดลของ Feedback Loop ของ Zillow Model มันดันไปเอาค่า Prediction ที่ตัวเองเป็นคนสร้าง เช่นอาจจะบิดราคาให้สูงขึ้น เพื่อให้ตัวเองซื้อสินค้าได้ แสดงว่า Model
+
+มันได้ Prediction จากการ Bit ชนะคนอื่น ดังนั้นราคาที่ Forecast ออกมา ราคาบ้านมันก็จะสูงเกินความเป็นจริง แล้วโมเดล Diff ทำให้บริษัท Bit ชนะ ไม่จำเป็นต้องราคาสูงเกินไป แต่มันเชื่อว่าสูงดี แล้วก็สูญเสียไป 500 ล้าน
+มันจะมีเรื่อง Monitoring และ Data drift แล้วก็อย่าเชื่อโมเดล Feedback loop ตลอด เราต้องมี Human-in-the-loop validation เป็นเคสเช่นการปล่อยกู้
+
+โปรไฟล์คนแบบนี้ต้องให้คนตัดสิน 
+
+![image](https://github.com/user-attachments/assets/dcd08c45-81a4-4e05-9136-2594e39810d4)
+
+Prediction จนได้ Reverse-engineer เพื่อ Reverse pattern เพื่อดูว่าโมเดลของบริษัทเป็นแบบนี้นะ เขาก็จะเอาโมเดลเราไปขาย แล้วถ้าเขาอยากจะกู้ผ่าน จะต้องจ่ายเงินยังไงดี ก็อยู่ที่ Expose ต่าง ๆ
+
+![image](https://github.com/user-attachments/assets/98d0144a-b3f1-4cd9-96ff-44f0c43f4a62)
+
+MLOps -> Resources
+
+![image](https://github.com/user-attachments/assets/e728101a-4e50-45b5-827c-1f25fac30a0d)
+
+![image](https://github.com/user-attachments/assets/8840438f-1632-40c0-8b6c-ccd09b8f4fd4)
+
+![image](https://github.com/user-attachments/assets/f92d60cd-8340-45f8-b5f8-287314c50c80)
+
+MLOps, ML Engineer ตลาดไม่ได้มีเยอะมาก ถึงแม้เรามีสกิลก็ดี แต่เขาไม่ได้มีการเปิดตำแหน่งว่า ML Engineer, MLOps ละ เพราะว่าบางบริษัทเขามีทีม DevOps, IT อยู่
+
+การที่เราเข้าไปเป็น AI Engineer, Data Scientists เราก็ให้ทีม DevOps ทำ Productionize ทำให้เราไม่มีการเปิดตำแหน่งเพิ่ม
+
+ส่วน Infra platform ก็คือช่วยเรา Deploy แต่ถ้าหากเรามีสกิล เราเข้าไป Data Scientists ก็จะมีสกิลเหนือกว่าผู้อื่น
 
 
 

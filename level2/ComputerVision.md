@@ -27,5 +27,11 @@ ML - KNN ตอบตามเพื่อน หรือ Linear regression ท
 เวลาคนมาเคลมว่าใช้ SVM เขาจะถามว่าใช้ Kernel อะไร ถ้าตอบไม่ได้จะตก ถ้าเราไม่ใช้ Kernel functions ถ้าไม่ใช้ มันก็จะเป็น Linear Classifier ธรรมดา
 คุณเป็น 1 บรรทัดเขียนว่า Support Vector Machine ถ้าจะมีคือคุณใส่เกณฑ์ในการเทรนหลายแบบ ฉะนั้นจะต้องดูเรื่อง Kernel ในโลกไม่ได้มีแค่เฉพาะเรื่อง Neural Network
 
+## โจทย์ Image ทั้งหมด
+
+* Image classification
+* Object detection - Class ของ object และ ตำแหน่งของ Object แล้วเราค่อย Detect Object ณ ตำแหน่งนั้น ๆ พวก Faster RCNN มันพยายามทายตำแหน่งก่อน แล้วก็เลือกบางตำแหน่งมาทายคลาส
+ส่วนโมเดล YOLO ก็คือทำ Step เดียวคือถ่ายและทายพร้อมๆกัน วิธีแแต่ก่อนมัน Huristics มาก ๆ ถ้าเป็น กทม. เราจะสร้าง Background Model ภาพโล่งๆ แล้วเอาภาพที่เก็บใหม่ไปลบอย่างเดิม
+
 
 

@@ -96,5 +96,7 @@ ImageNet เป็น Reference ชุดเทสจะมีหมื่นก
 มีคนพยายามใช้ Spiking Neural Networks พยายามเอาเข้ามาทำ NN แต่มันก็ยังไม่ค่อยน่าสน เพราะว่ามันเหมือนเป็น Activation function นึง
 
 * Basic NN
-เราใช้ข้อมูลจาก Gradient ฟังก์ชัน Partial derivatives สมมติผมดูก้อนนี้ พวก Weights ใน Connection ทั้งหลาย 
+เราใช้ข้อมูลจาก Gradient ฟังก์ชัน Partial derivatives สมมติผมดูก้อนนี้ พวก Weights ใน Connection ทั้งหลายตาม Direction of changes that increases the value of the function
+
+* Loss function และ Gradient Descent (มันเป็นข้อมูลที่ Noise เยอะ มันเชื่ออะไรไม่ได้ครั้งเดียว)
 

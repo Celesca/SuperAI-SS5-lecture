@@ -30,6 +30,9 @@ ML - KNN ตอบตามเพื่อน หรือ Linear regression ท
 ## โจทย์ Image ทั้งหมด
 
 * Image classification
+* Object detection ทำ tracking เราจับทั้งหมดมาก่อน YOLO สุดท้ายจะมีฟังก์ชันเรื่อง Tracking อยู่ มันเคยชื่อ Brief Sort แต่ก็ยังมีคน Detect ก่อนแล้วก็ Track ต่อ คือมันอาจจะเร็ว แต่ก็มีโอกาสพลาด แต่ก็สามารถ Track และ Detect พร้อมๆกัน สมัยนี้ก็ยังใช้ YOLO แล้ว Work
+
+* Image classification
 * Object detection - Class ของ object และ ตำแหน่งของ Object แล้วเราค่อย Detect Object ณ ตำแหน่งนั้น ๆ พวก Faster RCNN มันพยายามทายตำแหน่งก่อน แล้วก็เลือกบางตำแหน่งมาทายคลาส
 ส่วนโมเดล YOLO ก็คือทำ Step เดียวคือถ่ายและทายพร้อมๆกัน วิธีแแต่ก่อนมัน Huristics มาก ๆ ถ้าเป็น กทม. เราจะสร้าง Background Model ภาพโล่งๆ แล้วเอาภาพที่เก็บใหม่ไปลบอย่างเดิม
 

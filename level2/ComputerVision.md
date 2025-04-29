@@ -36,5 +36,13 @@ ML - KNN ตอบตามเพื่อน หรือ Linear regression ท
 * Object detection - Class ของ object และ ตำแหน่งของ Object แล้วเราค่อย Detect Object ณ ตำแหน่งนั้น ๆ พวก Faster RCNN มันพยายามทายตำแหน่งก่อน แล้วก็เลือกบางตำแหน่งมาทายคลาส
 ส่วนโมเดล YOLO ก็คือทำ Step เดียวคือถ่ายและทายพร้อมๆกัน วิธีแแต่ก่อนมัน Huristics มาก ๆ ถ้าเป็น กทม. เราจะสร้าง Background Model ภาพโล่งๆ แล้วเอาภาพที่เก็บใหม่ไปลบอย่างเดิม
 
+## โมเดล SAN - Segment Anything แต่มันกินทรัพยากรเยอะมาก
+
+โจทย์ Image segmentation - Semantic Instance , Panoptic
+
+อย่างเช่น เราอยากจะทำ Labeling Object Detection ถ้าเราตีกรอบเองก็จะทำนาย แต่ถ้าเราใช้ Panoptic segmentation ก่อนแล้วค่อยให้คนใส่ Label เอง
+
+* Depth estimation -> ตัวกล้องสองอันที่เห็น Object เห็นต่างกันเท่าไหร่
+
 
 

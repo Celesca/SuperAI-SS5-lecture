@@ -100,3 +100,19 @@ ImageNet เป็น Reference ชุดเทสจะมีหมื่นก
 
 * Loss function และ Gradient Descent (มันเป็นข้อมูลที่ Noise เยอะ มันเชื่ออะไรไม่ได้ครั้งเดียว)
 
+* Gradient Vanishing Problem - ใช้ Feature Map เราก็จะสร้าง custom filter แล้วก็ทำ Feature Map เวลามันสไลด์ เราจะได้ค่า Gradient 100 ชุด โดยการอยู่บนพารามิเตอร์ชุดเดียวกัน เราสามารถเอามาบวกกันได้เลย Amplitude ก็จะใหญ่พอที่จะเทรน โดยการทำ Slide Filter มองในมุมนึงเป็น Share weight เลยทำให้ได้ผลดี อีกอันนึงที่ Convolution Filter อีกอันที่เทรนด์ได้ มันคล้ายกับ Glabo Filter
+* เวลาดูที่ฟีลเตอร์ มันจะเอาฟีลเตอร์ล่างมาผสมกัน ตอนแรกได้เส้น โค้ง Shape แล้วก็ได้เป็นหน้าตา มันเป็น Hierarchial representation มันคล้ายกับสมองของเรา
+มันก็เป็น Representation ด้าน Computer Vision เราต้องการ Build
+
+![image](https://github.com/user-attachments/assets/df134716-dde8-4f49-8e0a-3e5434903f59)
+
+GIST + Bag of Forwarding เห็นว่าจะมา CNN หมดเลยเพราะดีกว่า
+
+* Gradient Vanishing Solution 2 : ResNet / skip connection
+
+เขามีความเชื่อว่า Convolution มัน Share weight ก็จะแก้ Gradient หายได้ดี แต่ถ้ามีคนที่ต่อ Convolution 7-8 ชั้น และปี 2015 ลองต่อไป 20 ชั้น / 50 ชั้น ผลเริ่มห่วย ไอตัว Weight Gradient มันไม่ได้แก้ปัญหา แต่มัน Delay ปัญหาออกไปต่างหาก
+
+ฉะนั้นเราจะเติมชื่อ Skip-connection มันจะเป็น FX แล้วไปบวก ต่อ Layer ยาวๆ โดยไม่หายไปได้ บางทีอาจจะ Skip ข้ามบล็อคจากข้ามท้ายก็มี มันก็จะมี ResNet ที่ Skip ทีละ 2 และก็ DenseNet
+กลายเป็นโครงสร้างมาตรฐาน พวก GPT แต่ไม่ได้เจาะจงด้านงาน Image มันเป็นโครงสร้างงานมาตรฐาน VGG ไม่มี Skip connection แต่จบอยู่ที่ 20 layers ถ้าเราไม่มี เราจะการตีความ Layer มันจะ Complex เรื่อยๆ เราตีความได้ แต่การตีความมันจะไม่ถูก เพราะมัน Skip ได้ Layer ล่างง่ายกว่า Feature บน เสมอ มันตีความไม่ถูกแน่นอน
+
+

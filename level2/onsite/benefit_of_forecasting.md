@@ -64,3 +64,5 @@ Regression Analysis
 
 Seasonal Index + Trend
 เดือนหน้าจะขายอะไร มาดูขายอะไรไม่ใช่ดูเดือนที่แล้ว แต่ดูปีที่แล้ว
+
+มีของตลอดและไม่ Forecast หรือดองนาน เขาจะคีย์ตัว Expired Date แล้ว

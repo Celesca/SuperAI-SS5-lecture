@@ -84,3 +84,6 @@ dataset
 
 dataset: Train_alpaca
 
+ปกติเราจะใช้แค่ train กับ export
+
+ในการที่เราทำ LoRA เราควร Merge Adapter ตัวหลักเข้ากับ Model weight ก่อน เพราะว่าเราไปเทรนด์ Low-rank adaption แทน

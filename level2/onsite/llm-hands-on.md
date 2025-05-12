@@ -69,19 +69,13 @@ pip install -U "huggingface_hub[cli]"
 ![image](https://github.com/user-attachments/assets/44b0203b-f850-4dda-9945-92a5ad0d4b27)
 
 เลือก Template ได้
-
 ตัว Example
-
 train_lora -> llama_3_lora_sft_ds3.yaml เราจะเซ็ต deepspeed หรือ stage ที่เราอยากเทรนด์
 
 Stage: sft, finetune: lora, lora_rank 8 ฉะนั้นมันอยากที่จะแบ่งตัว Optimizer ได้ มันจะแบ่งตัว Gradient กับ Weight ได้
-
 ds_z2_config.json
 
 แล้วก็ Dataset
-
-dataset
-
 dataset: Train_alpaca
 
 ปกติเราจะใช้แค่ train กับ export

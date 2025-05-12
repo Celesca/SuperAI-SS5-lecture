@@ -62,7 +62,9 @@ AG News -> Datasets
 
 ml Mamba
 conda env list
-conda activate <>
+conda activate myenv
+
+pip install -e ".[torch, metrics]"
 
 pip install -U "huggingface_hub[cli]"
 
@@ -85,3 +87,11 @@ dataset: Train_alpaca
 export LD_LIBRARY_PATH = /project/ai901506-ai25tn/cache
 
 1 Node - มี 4 ใบ ถ้าเซ็ตเกินไป มันอาจจะกิน Resource เยอะเกิน
+
+![image](https://github.com/user-attachments/assets/149c2306-61d0-45cf-baf7-26ec6556c35a)
+
+LoRA พยายามหาความสัมพันธ์ของ Vector -> ซึ่งมันมีความสัมพันธ์ได้ว่า
+เหมือนเขาจะเทรนด์เฉพาะคอลัมน์ที่มีความสัมพันธ์กัน ซึ่งเขาเรียกว่า RANK=1
+
+เขาพยายามตามหาความสัมพันธ์ 2 ก็พยายามหาสองความสัมพันธ์ใหญ่ๆ จาก Decomposition จะทำให้เหลือจาก 3x3 = 3x1 + 1x3
+เราลองไปหาดีเทล มันพยายาม Decomposite ให้กลายเป็น Matrix A and B

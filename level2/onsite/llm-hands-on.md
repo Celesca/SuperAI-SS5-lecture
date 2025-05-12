@@ -87,3 +87,7 @@ dataset: Train_alpaca
 ปกติเราจะใช้แค่ train กับ export
 
 ในการที่เราทำ LoRA เราควร Merge Adapter ตัวหลักเข้ากับ Model weight ก่อน เพราะว่าเราไปเทรนด์ Low-rank adaption แทน
+
+export LD_LIBRARY_PATH = /project/ai901506-ai25tn/cache
+
+1 Node - มี 4 ใบ ถ้าเซ็ตเกินไป มันอาจจะกิน Resource เยอะเกิน

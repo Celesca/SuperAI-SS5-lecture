@@ -1,9 +1,11 @@
-## LLM
+## LLM Training Hands-on by พี่นิว (Thinking Machines)
 
 * Base model - ยังไม่ได้เทรนด์ เหมาะกับ Large datasets
+* Instruct model - เทรนด์แล้ว เหมาะกับ Small datasets
 
-
-
+300 - 1,000 Rows:
+Instruct or Base
+1,000+ Rows: Base 
 
 เขาไปดูอัลกอริทึมใหม่ของการ์ดจอ มันเลยเปลี่ยนวิธีคูณในการ์ดจอพวก Nvidia H100 แต่ตัวเลขเหมือนเดิม แต่รันแล้วมันเร็วขึ้นมาก เวลาเราใช้กับการ Hack 
 
@@ -31,7 +33,15 @@ Megatron-LM ของ Nvidia ที่เขาทำขึ้นมา
 
 ถ้าคุณเพิ่ม batch size ก็ต้องเพิ่ม learning rate ตามด้วย
 
-Batch Size ประมาณ 1000 ขึ้นไป ของ Pretrained แต่ถ้า Fine-tune อาจจะน้อยกว่านั้น
+2. Batch Size ประมาณ 1000 ขึ้นไป ของ Pretrained แต่ถ้า Fine-tune อาจจะน้อยกว่านั้น
 
 Gradient Accumulation - เวลาเทรนด์ เราจะไม่ได้บวกเลยทันที แต่เราจะเทรนด์ต่อแล้วบวกกัน มันก็จะเท่ากับการ Train หลายๆรอบ ตัวใหญ่บวกกัน
+แล้วก็ไปสเกลบวกลบให้เท่ากัน
+
+3. Sequence Length - ยาวแค่ไหน เราจะต้องเอา Tokenizer ไปตัด แล้วกิน Token ได้แค่ไหน เช่น 10 Tokens, 100 Tokens
+เราก็ควรจะเซ็ตให้น้อยๆ นอกจากจะทำให้เทรนด์ช้าลงแล้วก็จะน้อย มันไปอัพเดท weight โมเดลใหญ่ที่ไหนบ้าง
+
+## Hands-on Fine-tuning
+
+
 

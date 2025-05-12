@@ -30,3 +30,8 @@ Megatron-LM ของ Nvidia ที่เขาทำขึ้นมา
 * What to adjust when training LLM จะต้องปรับ Batch Size, Learning Rate
 
 ถ้าคุณเพิ่ม batch size ก็ต้องเพิ่ม learning rate ตามด้วย
+
+Batch Size ประมาณ 1000 ขึ้นไป ของ Pretrained แต่ถ้า Fine-tune อาจจะน้อยกว่านั้น
+
+Gradient Accumulation - เวลาเทรนด์ เราจะไม่ได้บวกเลยทันที แต่เราจะเทรนด์ต่อแล้วบวกกัน มันก็จะเท่ากับการ Train หลายๆรอบ ตัวใหญ่บวกกัน
+

@@ -55,3 +55,5 @@ EDA - ใช้กี่ Tokens ถ้ามันมีหลุดๆมาบ
 * Llama-Factory -> เอาไว้
 
 Reward Modeling -> พวก GRPO
+
+AG News -> Datasets

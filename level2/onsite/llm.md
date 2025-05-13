@@ -27,3 +27,11 @@ BERT รับได้แค่ 512 Tokens
 
 * Bias and Fairness - LLM ที่ bias มีแต่ผลเสีย เช่น ใช้ LLM ในการคัดเลือกสมัครเข้างาน ถ้า LLM เลือกแต่คนหน้าสวยหล่อก็จะเลือก
 
+* Explainability - การอธิบายได้ ต้องคิดก่อนตอบเช่น Chain-of-Thought Prompting, Reasoning - Typhoon, OpenThaiGPT, DeepSeekR1 มันจะคิดก่อนตอบ
+
+* Few-shot, Chain of Thought -
+
+## Inference Tools
+
+n8n, OpenRouter.ai, LLama.cpp, vllm, 
+

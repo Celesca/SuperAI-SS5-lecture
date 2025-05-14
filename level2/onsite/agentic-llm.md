@@ -140,12 +140,7 @@ Sequencial Workflows
 
 จนกว่าจะตอบถูกและพอใจ  LLM Call Evaluator, Generator
 
+![image](https://github.com/user-attachments/assets/8911c269-a2c4-4e66-bfa5-cb7b8cd9117b)
 
-
-
-
-
-
-
-
+ให้เราเชื่อใจมันให้มันติดลูปมันเอง
 

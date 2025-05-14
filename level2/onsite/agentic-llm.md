@@ -68,8 +68,17 @@ Clear -> ใช้ tags ได้ Organized prompt (SML tags) <example> tags Inp
 
 Diverse -> หลากหลายให้มันครบทุกเคส Cover edge cases and potential challenges, and vary enough
 
-* Use XML tags to structure your prompts ได้
+* Use XML tags to structure your prompts ได้ delimiter
 
+เพราะว่าโมเดลมันอ่านเป็นคำยาวๆ มันจะไม่เข้าใจว่าอันไหน Instruction หรือ
+
+* Give the model time (space) to think
+
+Chain-of-thought (CoT) -> ใช้สำหรับ complex like problem-solving research, analysis
+Examples : 
+- Drawback ใช้ Token เยอะ คิดนาน increase cost and latency
+
+โมเดลสมัยใหม่มันถูกเทรนด์มาให้คิดเองอยู่แล้ว พวก Reasoning Model
 
 
 

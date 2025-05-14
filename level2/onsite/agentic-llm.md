@@ -25,3 +25,52 @@ Top-P คือเอา Token มารวมทุกตัวแล้วไ�
 
 ## Prompt Engineering
 
+prompt ให้ดีมันก็ไม่ได้ง่ายขนาดนั้น เราจะมาพูดให้ฟังเผื่อเป็นประโยชน์มาก เช่น Mindset ในการใช้กับ LLM ในปัจจุบัน
+Prompt คือ Input (Context) ที่ใส่เข้าไปในโมเดล
+
+LLM จะรู้แค่ Training data กับ Prompt เท่านั้น
+
+Prompt Structure: API
+
+System Prompt -> user & assistant
+
+* Context Window -> Working memory จำนวน token ที่เราใส่เข้าไปได้ เช่น
+
+Claude 3 has 200k ใช้จริงๆ ไม่เกินหมื่นหรอก ซึ่ง Prompt มีขนาดจำกัด เพราะสุดท้ายก็ไม่ได้ใช้ Window Context ทั้งหมด
+
+* Prompt Engineering คือการ optimize your model LLM responses โดยการ Controlling model behavior พารามิเตอร์ของ LLM เราสามารถ Adjust เพื่อตอบโจทย์ของสัปดาห์นี้
+เราจะต้อง Prompt
+
+* Prompting Basic
+
+Think of LLMs LLMs มันไม่รู้ถ้าหากเราไม่ Prompt
+Be clear, precise, detailed, break down yuor task, provided samples
+
+ภาษาอังกฤษเราไม่เก่ง เราต้องเช็ค Typo ไม่งั้นมันจะแปลกๆได้
+
+* Break down your tasks
+
+Unclear Prompt - Please remove all personally identifiable information from these customer feedback messages: {{feedback_data}}
+
+Clear Prompt - Instructions: 1. Replace all customer 2. Replace emails เราต้องเซ็ตไว้เป็นลำดับ
+
+* Provide examples - ให้ตัวอย่างคือ Few-shot (In-context) ไม่ให้ตัวอย่างก็ Zero-shot
+
+Few-shot/multishot prompting or `in-context learning (ICL)`
+
+Effective in instructing "style" of the text
+
+* Crafting effective examples -
+
+Instruction - ให้เคลียร์สอดคล้อง
+
+Clear -> ใช้ tags ได้ Organized prompt (SML tags) <example> tags Input: The new dashboard, Category:, Sentiment: Negative, Priority 
+
+Diverse -> หลากหลายให้มันครบทุกเคส Cover edge cases and potential challenges, and vary enough
+
+* Use XML tags to structure your prompts ได้
+
+
+
+
+

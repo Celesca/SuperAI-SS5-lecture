@@ -80,6 +80,13 @@ Examples :
 
 โมเดลสมัยใหม่มันถูกเทรนด์มาให้คิดเองอยู่แล้ว พวก Reasoning Model
 
+* Give a role (Adopt a persona) - สมัยนี้ไม่ค่อยดีแล้ว
+
+ต้องบอกว่ามันคือ "Act as the CFO"
+
+DeepSeek R1 มันไม่ได้เทรนด์มาใน System Prompt แต่มันเอมาเทรนด์ใน Prompt
+
+
 
 
 

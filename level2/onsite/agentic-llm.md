@@ -86,6 +86,25 @@ Examples :
 
 DeepSeek R1 มันไม่ได้เทรนด์มาใน System Prompt แต่มันเอมาเทรนด์ใน Prompt
 
+Prompt Engineering vs Fine-tuning
+
+Fine-tuning ใช้เวลานาน
+
+บางบ้านใช้ GRPO
+
+## Reasoning Model
+
+ใช้ Base Model (V3) ตอบคำถามได้ ทำให้เป็น Emergent
+
+R1-Zero: มันถูกเทรนด์ด้วย Reinforcement Learning ให้คิดเอง (RL) สิ่งที่มันจะยากคือ Accuracy
+
+* Prompting Reasoning models provided
+
+o3, o4 คุณต้องคิดว่ามันเป็น Senior co-worker มันคิดเองได้ ไว้ใจมัน นอกเหนือจาก Junior co-worker เช่น o1
+คุรจะเขียนเป็นเป้าหมาย Don't write prompts: write briefs. Take the wheel and feel the AGI
+
+
+
 
 
 

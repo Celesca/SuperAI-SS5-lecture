@@ -103,6 +103,46 @@ R1-Zero: มันถูกเทรนด์ด้วย Reinforcement Learning
 o3, o4 คุณต้องคิดว่ามันเป็น Senior co-worker มันคิดเองได้ ไว้ใจมัน นอกเหนือจาก Junior co-worker เช่น o1
 คุรจะเขียนเป็นเป้าหมาย Don't write prompts: write briefs. Take the wheel and feel the AGI
 
+## AI agents (Tool Use)
+
+Agentic กับ Tool Use เราสามารถให้โมเดลมันสามารถเรียกใช้ฟังก์ชันได้ 
+
+อีกอันที่นิยมคือการให้ Agent ติดต่อกับ Database ได้ เช่น Maintain dictionary
+
+## Agentic LLM (2025 Agentic Year)
+
+* Building effective agents - Blog post ที่จะสร้าง คุณจะต้องแยกให้ออกว่าอันไหนคือ agent หรือไม่ใช่ agent
+
+* Workflows vs. Agents
+
+Building block: The augmented LLM
+
+Sequencial Workflows
+
+1. Workflow: Prompt chaining
+
+![image](https://github.com/user-attachments/assets/2f8ef0e8-0067-48fb-a640-06046e841d35)
+
+มีการดราฟ Outline เป็น Workflows แบบง่าย ๆ 
+
+2. Workflow: Routing
+
+เป็นตัวที่แยก Prompt ไป ระหว่างคำถามง่ายกับยาก คำถามไหนง่ายก็ไปใช้โมเดลเล็กตอบ แต่ถ้าคำสั่งไหน Complex ก็จะส่งไปตัวใหญ่หน่อย
+อันไหนง่ายก็ต่อ Haiku ตัวกลางก็ Sonnet
+
+3. Workflow: Parallelization
+
+4. Workflow: Orchestrator-workers
+
+เอาแต่ละงานมารวมกัน อาจจะแบ่งงานได้หลายแบบ มันเป็นแบบ Clear workflows ไม่ได้ติดลูปอะไร
+
+5. Workflow: Evaluator-optimizer
+
+จนกว่าจะตอบถูกและพอใจ  LLM Call Evaluator, Generator
+
+
+
+
 
 
 
